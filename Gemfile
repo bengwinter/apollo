@@ -1,0 +1,11 @@
+source 'http://rubygems.org'
+
+gem 'pry'
+gem 'pg'
+gem 'dotenv'
+gem 'soundcloud'
+gem 'sinatra'
+gem 'sinatra-reloader'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'rake'
