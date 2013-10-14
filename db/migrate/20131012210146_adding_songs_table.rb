@@ -9,6 +9,7 @@ class AddingSongsTable < ActiveRecord::Migration
       t.integer :num_shares     
       t.integer :num_fav
       t.string :genre
+      t.integer :playist_id
       t.timestamps
     end
   end

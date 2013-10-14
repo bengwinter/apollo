@@ -2,6 +2,7 @@ class AddingFollowersTable < ActiveRecord::Migration
   def up
     create_table :followers do |t|
       t.string :username
+      t.integer :user_id
       t.timestamps
     end
   end

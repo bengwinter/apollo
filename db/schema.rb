@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 20131012210209) do
 
   create_table "followers", force: true do |t|
     t.string   "username"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "follows", force: true do |t|
     t.string   "username"
+    t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 20131012210209) do
     t.string   "creator"
     t.string   "type"
     t.string   "genre"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +48,7 @@ ActiveRecord::Schema.define(version: 20131012210209) do
     t.integer  "num_shares"
     t.integer  "num_fav"
     t.string   "genre"
+    t.integer  "playist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
