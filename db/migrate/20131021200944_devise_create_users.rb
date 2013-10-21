@@ -1,4 +1,4 @@
-class DeviseCreateUsers < ActiveRecord::Migration
+  class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       ## Database authenticatable
@@ -33,7 +33,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.integer :age
       t.string :gender
-      t.string :location
+      t.string :city
+      t.string :state
       t.string :image
       t.string :type  
 

@@ -16,11 +16,25 @@ ActiveRecord::Schema.define(version: 20131021214853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "playlists_tables", force: true do |t|
-    t.string "name"
-    t.string "creator"
-    t.string "type"
-    t.string "genre"
+  create_table "playlists", force: true do |t|
+    t.string  "name"
+    t.string  "creator"
+    t.string  "type"
+    t.string  "genre"
+    t.integer "user_id"
+  end
+
+  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
+
+  create_table "songs", force: true do |t|
+    t.string  "title"
+    t.string  "artist"
+    t.string  "url"
+    t.string  "source"
+    t.integer "plays"
+    t.integer "shares"
+    t.integer "favorites"
+    t.string  "genre"
   end
 
   create_table "songs_playlists", id: false, force: true do |t|
@@ -31,17 +45,6 @@ ActiveRecord::Schema.define(version: 20131021214853) do
   add_index "songs_playlists", ["playlist_id"], name: "index_songs_playlists_on_playlist_id", using: :btree
   add_index "songs_playlists", ["song_id", "playlist_id"], name: "index_songs_playlists_on_song_id_and_playlist_id", using: :btree
   add_index "songs_playlists", ["song_id"], name: "index_songs_playlists_on_song_id", using: :btree
-
-  create_table "songs_tables", force: true do |t|
-    t.string  "title"
-    t.string  "artist"
-    t.string  "url"
-    t.string  "source"
-    t.integer "plays"
-    t.integer "shares"
-    t.integer "favorites"
-    t.string  "genre"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -58,7 +61,8 @@ ActiveRecord::Schema.define(version: 20131021214853) do
     t.string   "last_name"
     t.integer  "age"
     t.string   "gender"
-    t.string   "location"
+    t.string   "city"
+    t.string   "state"
     t.string   "image"
     t.string   "type"
     t.datetime "created_at"

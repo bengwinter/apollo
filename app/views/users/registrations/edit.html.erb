@@ -19,6 +19,26 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
+   <div><%= f.label :first_name %><br /><i>(we need your first name to confirm your changes)</i><br />
+  <%= f.text_field :first_name %></div>
+
+  <div><%= f.label :last_name %><br /><i>(we need your last name to confirm your changes)</i><br />
+  <%= f.text_field :last_name %></div>
+
+  <div><%= f.label :age %><br /><i>(we need your age to confirm your changes)</i><br />
+  <%= f.number_field :age %></div>
+
+  <div><%= f.label :gender %><br /><i>(we need your gender to confirm your changes)</i><br />
+  <%= f.text_field :gender %></div>
+
+  <div><%= f.label :city %><br /><i>(we need your current city to confirm your changes)</i><br />
+  <%= f.text_field :city %></div>
+
+  <div><%= f.label :state %><br /><i>(we need your current state to confirm your changes)</i><br />
+  <%= f.text_field :state %></div>
+
+  <div><%= f.label :image %><br /><i>(we need an image to confirm your changes)</i><br />
+  <%= f.text_field :image %></div>
   <div><%= f.submit "Update" %></div>
 <% end %>
 
