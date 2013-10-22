@@ -1,1 +1,110 @@
-<h1> Welcome to Apollo</h1>
+<% if user_signed_in? %>
+
+<% else %>
+  <h2> Landing Page </h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/gumby.css" rel="stylesheet" media="screen">
+    <link href="css/apollo_landingpage.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="row" id="top-bar-container">
+      <div class="three columns" id="top-bar-left">
+        <h3>Apollo Logo</h3>
+      </div>
+      <div class="nine columns" id="top-bar-right">
+          <h3>Login and About Us</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns main-body">
+        <div class="three columns genre-column">
+          <h4>Top Songs Right Now</h4>
+            <div class="top-song">
+              <p> Song 1 </p>
+            </div>
+            <div class="top-song">
+              <p> Song 2 </p>
+            </div>
+            <div class="top-song">
+              <p> Song 3 </p>
+            </div>
+            <div class="top-song">
+              <p> Song 4 </p>
+            </div>
+            <div class="top-song">
+              <p> Song 5 </p>
+            </div>
+            <div class="top-song">
+              <p> Song 6 </p>
+            </div>
+        </div>          
+        <div class="three columns genre-column">
+          <h4>Top Songs Over Last Week</h4>
+            <div class="last-week-top-song">
+              <p> Song 1 </p>
+            </div>
+            <div class="last-week-top-song">
+              <p> Song 2 </p>
+            </div>
+            <div class="last-week-top-song">
+              <p> Song 3 </p>
+            </div>
+            <div class="last-week-top-song">
+              <p> Song 4 </p>
+            </div>
+            <div class="last-week-top-song">
+              <p> Song 5 </p>
+            </div>
+            <div class="last-week-top-song">
+              <p> Song 6 </p>
+            </div>
+        </div>
+        <div class="three columns genre-column">
+          <h4>Top Songs From Hip Hop</h4>
+           <div class="hip-hop-song">
+              <p> Song 1 </p>
+            </div>
+            <div class="hip-hop-song">
+              <p> Song 2 </p>
+            </div>
+            <div class="hip-hop-song">
+              <p> Song 3 </p>
+            </div>
+            <div class="hip-hop-song">
+              <p> Song 4 </p>
+            </div>
+            <div class="hip-hop-song">
+              <p> Song 5 </p>
+            </div>
+            <div class="hip-hop-song">
+              <p> Song 6 </p>
+            </div>
+        </div>
+        <div class="three columns genre-column">
+          <h4>Top Songs From Electronic</h4>
+           <div class="electronic-song">
+              <p> Song 1 </p>
+            </div>
+            <div class="electronic-song">
+              <p> Song 2 </p>
+            </div>
+            <div class="electronic-song">
+              <p> Song 3 </p>
+            </div>
+            <div class="electronic-song">
+              <p> Song 4 </p>
+            </div>
+            <div class="electronic-song">
+              <p> Song 5 </p>
+            </div>
+            <div class="electronic-song">
+              <p> Song 6 </p>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-bar">
+      <div class="span12">
+        <h3>Bottom Bar</h3>
+      </div>
+    </div>
+<% end %>

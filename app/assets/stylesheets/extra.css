@@ -1,0 +1,105 @@
+#top-bar-container {
+  background-color: rgba(134, 134, 134, 1.0000);
+}
+
+#top-bar-left {
+  background-color:rgba(58, 58, 57, 1.0000);
+  color: white;
+  text-align: center;
+}
+
+#top-bar-right {
+  background-color:rgba(58, 58, 57, 1.0000);
+  color: white;
+  text-align: center;
+}
+
+.main-body {
+  background-color:rgba(224, 224, 224, 1.0000);
+  text-align: center;
+  height: 650px;
+}
+
+.top-song {
+  height: 80px;
+  background-color:rgba(31, 89, 43, 1.0000);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.last-week-top-song {
+  height: 80px;
+  background-color:rgba(195, 180, 26, 1.0000);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.hip-hop-song {
+  height: 80px;
+  background-color:rgba(97, 15, 6, 1.0000);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.electronic-song {
+  height: 80px;
+  background-color:rgba(39, 69, 137, 1.0000);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.genre-column {
+  background-color:rgba(179, 179, 179, 1.0000);
+  height: 600px;
+  text-align: center;
+
+}
+
+#bottom-bar {
+  background-color:rgba(167, 114, 38, 1.0000);
+  text-align: center;
+}
+
+
+#top-nav-bar-container {
+  background-color: rgba(228, 228, 228, 1.0000);
+}
+
+#top-left-side-bar {
+  background-color:rgba(58, 58, 57, 1.0000);
+  color: white;
+  text-align: center;
+}
+
+#music-player {
+  background-color:rgba(58, 58, 57, 1.0000);
+  color: white;
+  text-align: center;
+}
+
+#top-right-side-bar {
+  background-color:rgba(58, 58, 57, 1.0000);
+  color: white;
+}
+
+#main-container {
+  background-color:rgba(179, 179, 179, 1.0000);
+}
+
+#left-side-bar {
+  background-color:rgba(27, 93, 158, 1.0000);
+  height: 650px;
+}
+
+#main-body {
+  background-color:rgba(27, 93, 158, 1.0000);
+  text-align: center;
+  height: 650px;
+}
+
+#right-side-bar {
+  background-color:rgba(27, 93, 158, 1.0000);
+  height: 650px;
+}
+
+
+
