@@ -36,7 +36,7 @@
       t.string :city
       t.string :state
       t.string :image
-      t.string :user_type, :default => "person"
+      t.string :designation, :default => "person"
 
       t.timestamps
     end
