@@ -9,6 +9,7 @@ class CreateSongs < ActiveRecord::Migration
       t.integer :shares
       t.integer :favorites
       t.string :genre
+      t.belongs_to :genre, index:true
     end
   end
 end

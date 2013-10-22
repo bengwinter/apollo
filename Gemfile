@@ -20,7 +20,7 @@ gem 'devise'
 gem 'annotate'
 gem 'pry-rails'
 
-gem 'dotenv'
+gem 'dotenv-rails'
 
 gem 'soundcloud'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
