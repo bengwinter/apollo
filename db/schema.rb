@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20131021214853) do
     t.string   "city"
     t.string   "state"
     t.string   "image"
-    t.string   "type",                   default: "person"
+    t.string   "user_type",              default: "person"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
