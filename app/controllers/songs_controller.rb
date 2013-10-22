@@ -1,55 +1,75 @@
 class SongsController < ApplicationController
-  before_action :set_student_skill, only: [:edit, :update, :destroy]
+  before_action :set_song, only: [:show, :edit, :update, :destroy]
 
-  # GET /student_skills/new
-  def new
-    @student_skill = StudentSkill.new
-    @student_id = params[:student_id]
+  # GET /songs
+  # GET /songs.json
+  def index
+    @songs = current_user.songs
   end
 
-  # GET /student_skills/1/edit
+  # GET /songs/new
+  def new
+    @song = Song.new
+  end
+
+  # GET /songs/1/edit
   def edit
   end
 
-  # POST /student_skills
+  # POST /songs
+  # POST /songs.json
   def create
-    @student_skill = StudentSkill.new(student_skill_params)
+    @song = Song.new(add_song_params)
+
+    current_user.songs << @song
+
     respond_to do |format|
-      if @student_skill.save
-        format.html { redirect_to student_path(@student_skill.student_id), notice: 'A student skill was successfully added.' }
+      if @song.save
+        format.html { redirect_to @song, notice: 'Song was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @song }
       else
         format.html { render action: 'new' }
+        format.json { render json: @song.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /stduent_skills/1
+  # PATCH/PUT /songs/1
+  # PATCH/PUT /songs/1.json
   def update
     respond_to do |format|
-      if @student_skill.update(student_skill_params)
-        format.html { redirect_to student_path(@student_skill.student_id), notice: 'The student skill was successfully updated.' }
+      if @song.update(update_song_params)
+        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
+        format.json { render json: @song.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /student_skills/1
+  # DELETE /songs/1
+  # DELETE /songs/1.json
   def destroy
-    @student_skill.destroy
+    @song.destroy
     respond_to do |format|
-      format.html { redirect_to students_skills_url }
+      format.html { redirect_to songs_url }
+      format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_student_skill
-      @student_skill = StudentSkill.find(params[:id])
+    def set_song
+      @song = Song.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def student_skill_params
-      params.require(:student_skill).permit(:level, :student_id, :spell_id) 
+    def add_song_params
+      params.require(:song).permit(:url)
+    end
+
+    def update_song_params
+      params.require(:song).permit(:url, :title, :artist, :genre)
     end
 end

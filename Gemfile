@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # username gem for creation
 gem 'devise'
-
+gem 'annotate'
 gem 'pry-rails'
 
 gem 'dotenv'
