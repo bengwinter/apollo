@@ -36,7 +36,7 @@
       t.string :city
       t.string :state
       t.string :image
-      t.string :type  
+      t.string :type, :default => "person"
 
       t.timestamps
     end

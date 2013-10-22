@@ -1,1 +1,6 @@
-<h1>Welcome To Apollo</h1>
+<% if user_signed_in? %>
+<h2>Welcome To Apollo You are Logged In</h1>
+
+<% else %>
+<h2>Welcome to Apollo You are NOT Logged In</h2>
+<% end %>
