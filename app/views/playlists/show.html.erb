@@ -1,7 +1,8 @@
 <h3><%=@playlist.name %>
 <ul>
 <% @playlist.songs.each do |song| %>
-    <h5><%= song.url %></h5>
+    <li><%= song.url %>
+    <% link_to 'Edit Song', edit_song_path(song.id) %></li>
   <% end %>
 </ul>
 
