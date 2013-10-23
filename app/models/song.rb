@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
   def play(song_id)
     @song = Song.find(song_id)
     @track = SOUNDCLOUD_CLIENT.get('/resolve', :url => @song.url)
-    puts @track.stream_url
+    return @track.stream_url
   end
 
 end

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20131023183253) do
   end
 
   create_table "orders", force: true do |t|
-    t.string   "order"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "song_id"

@@ -1,8 +1,9 @@
 <h3><%=@playlist.name %></h3><h6><%= link_to 'Edit Playlist', edit_playlist_path(@playlist.id) %></h6>
 <ul>
 <% @playlist.songs.each do |song| %>
-    <li><%= song.url %>
-    <%#= song.play(song.id) %>
+    <li><%= song.orders.find_by_song_id(song.id).order %>
+    <%= song.url %>
+    <%= song.play(song.id) %>
     <%= link_to 'Edit Song', edit_song_path(song.id) %></li>
     <%= link_to 'Delete Song', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
