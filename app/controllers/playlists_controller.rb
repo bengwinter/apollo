@@ -23,8 +23,11 @@ class PlaylistsController < ApplicationController
       if @playlist.save
         current_user.playlists << @playlist
         format.html { redirect_to root_url, notice: 'Playlist was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @plalist }
+
       else
         format.html { render action: 'new' }
+        format.json { render json: @playlist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -32,9 +35,11 @@ class PlaylistsController < ApplicationController
   def update
     respond_to do |format|
       if @playlist.update(playlist_params)
-        format.html { redirect_to root_url, notice: 'Playlist was successfully updated.' }
+        format.html { redirect_to playlist_path(@playlist.id), notice: 'Playlist was successfully updated.' }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
+        format.json { render json: @playlist.errors, status: :unprocessable_entity }
       end
     end
   end
