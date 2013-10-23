@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :playlist_song, only: [:show, :edit, :update, :destroy]
+  before_action :set_playlist, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -16,15 +16,15 @@ class PlaylistsController < ApplicationController
   end
 
   def create
+    
     @playlist = Playlist.new(playlist_params)
 
     respond_to do |format|
       if @playlist.save
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @playlist }
+        current_user.playlists << @playlist
+        format.html { redirect_to root_url, notice: 'Playlist was successfully created.' }
       else
         format.html { render action: 'new' }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -32,11 +32,9 @@ class PlaylistsController < ApplicationController
   def update
     respond_to do |format|
       if @playlist.update(playlist_params)
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to root_url, notice: 'Playlist was successfully updated.' }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,6 +57,6 @@ class PlaylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def playlist_params
-      params.require(:playlist).permit(:name, :user_id)
+      params.require(:playlist).permit(:name)
     end
 end
