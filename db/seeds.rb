@@ -25,14 +25,21 @@ eden = Song.create(title: "Eden", artist: "Ben Khan", url: "https://soundcloud.c
 undiscovered = Song.create(title: "Undiscovered", artist: "Laura Welsh", url: "https://soundcloud.com/laurawelsh/undiscovered-1", source: "SoundCloud", plays: 8, shares: 12, favorites: 21)
 summer = Song.create(title: "Summer", artist: "Paris Jones", url: "https://soundcloud.com/serendeee/summer-ft-april-kelly-b-a", source: "SoundCloud", plays: 15, shares: 15, favorites: 14)
 termanology = Song.create(title: "Termanology", artist: "Take My Turn", url: "https://soundcloud.com/macmediapromo/termanology-f-action-bronson", source: "SoundCloud", plays: 4, shares: 7, favorites: 12)
-mean_streets = Song.create(title: "Mean Streets", artist: "Tennis", url: "", source: "SoundCloud", plays: 7, shares: 12, favorites: 9)
+mean_streets = Song.create(title: "Mean Streets", artist: "Tennis", url: "https://soundcloud.com/tennisinc/mean-streets-1", source: "SoundCloud", plays: 7, shares: 12, favorites: 9)
 dreams = Song.create(title: "Dreams", artist: "wet", url: "https://soundcloud.com/wetnyc/dreams", source: "SoundCloud", plays: 11, shares: 22, favorites: 3)
 sand_fingers = Song.create(title: "Sand Through Fingers", artist: "Handbook", url: "https://soundcloud.com/handbook/handbook-sand-through-fingers", source: "SoundCloud", plays: 24, shares: 1, favorites: 5)
 white_tiger = Song.create(title: "White Tiger Remix", artist: "Izzy Bizu", url: "https://soundcloud.com/wantigga/white-tiger-wantigga-remix", source: "SoundCloud", plays: 7, shares: 32, favorites: 7)
 
-hip_hop.songs << lovin_it << whisky << summer << termanology
-electronic.songs << eden << undiscovered << mean_streets << dreams << sand_fingers << white_tiger
+hip_hop.songs << lovin_it 
+hip_hop.songs << whisky 
+hip_hop.songs << summer 
+hip_hop.songs << termanology
+electronic.songs << eden 
+electronic.songs << undiscovered 
+electronic.songs << mean_streets 
+electronic.songs << dreams 
+electronic.songs << sand_fingers 
+electronic.songs << white_tiger
 playlist_1.songs << lovin_it << whisky << eden
 playlist_2.songs << undiscovered << summer
 playlist_3.songs << mean_streets << dreams << sand_fingers << white_tiger
-
