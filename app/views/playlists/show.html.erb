@@ -2,6 +2,7 @@
 <ul>
 <% @playlist.songs.each do |song| %>
     <li><%= song.url %>
+    <%= song.play %>
     <%= link_to 'Edit Song', edit_song_path(song.id) %></li>
     <%= link_to 'Delete Song', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
