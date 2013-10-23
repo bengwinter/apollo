@@ -1,5 +1,20 @@
 <% if user_signed_in? %>
+<h2> Your Songs </h2>
+  <% if current_user.playlists == nil? %>
 
+    <% @user.playlists do |playlist| %>
+    <h3><%= playlist.name %></h3>
+    <ul>
+    <% playlist.songs do |song| %>
+    <li><%= song.title + " ," + song.artist %></li>
+  <% end %>
+    </ul>
+  <% end %>
+    <%= link_to 'Add Song', new_song_path %></br>
+  <% else %>
+    <%= link_to 'Add Song', new_song_path %></br>
+    <%= link_to 'Add Playlist', new_playlist_path %></br>
+  <% end %>
 <% else %>
   <h2> Landing Page </h2>
   </head>

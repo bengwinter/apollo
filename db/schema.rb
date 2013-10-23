@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022214459) do
+ActiveRecord::Schema.define(version: 20131022214217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20131022214459) do
 
   add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
 
+  create_table "playlists_songs", id: false, force: true do |t|
+    t.integer "playlist_id"
+    t.integer "song_id"
+  end
+
+  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id", using: :btree
+  add_index "playlists_songs", ["playlist_id"], name: "index_playlists_songs_on_playlist_id", using: :btree
+  add_index "playlists_songs", ["song_id"], name: "index_playlists_songs_on_song_id", using: :btree
+
   create_table "songs", force: true do |t|
     t.string  "title"
     t.string  "artist"
@@ -41,24 +50,6 @@ ActiveRecord::Schema.define(version: 20131022214459) do
   end
 
   add_index "songs", ["genre_id"], name: "index_songs_on_genre_id", using: :btree
-
-  create_table "songs_genres", id: false, force: true do |t|
-    t.integer "song_id"
-    t.integer "genre_id"
-  end
-
-  add_index "songs_genres", ["genre_id"], name: "index_songs_genres_on_genre_id", using: :btree
-  add_index "songs_genres", ["song_id", "genre_id"], name: "index_songs_genres_on_song_id_and_genre_id", using: :btree
-  add_index "songs_genres", ["song_id"], name: "index_songs_genres_on_song_id", using: :btree
-
-  create_table "songs_playlists", id: false, force: true do |t|
-    t.integer "song_id"
-    t.integer "playlist_id"
-  end
-
-  add_index "songs_playlists", ["playlist_id"], name: "index_songs_playlists_on_playlist_id", using: :btree
-  add_index "songs_playlists", ["song_id", "playlist_id"], name: "index_songs_playlists_on_song_id_and_playlist_id", using: :btree
-  add_index "songs_playlists", ["song_id"], name: "index_songs_playlists_on_song_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",       null: false
