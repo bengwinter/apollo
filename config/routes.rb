@@ -3,12 +3,12 @@ Apollo::Application.routes.draw do
   
 
   devise_for :users
-  resources :songs
-  post 'songs/favorite/:song_id' => 'song#favorite', as: :favorite_song
+  
 
   resources :playlists do
     resources :songs
     delete 'songs/:song_id' => 'song#delete', as: :delete_song_from_playlist
+    post 'songs/favorite/:song_id' => 'song#increase_favorite', as: :favorite_song
   end
 
   

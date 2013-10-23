@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :edit, :update, :destroy]
+  before_action :set_song, only: [:show, :edit, :update, :destroy, :increase_favorite]
 
   # GET /songs
   # GET /songs.json
@@ -19,7 +19,7 @@ class SongsController < ApplicationController
     end
   end
 
-  # GET /songs/1/edit
+  # GET playlists/1/songs/1/edit
   def edit
   end
 
@@ -40,16 +40,17 @@ class SongsController < ApplicationController
     end
   end
 
-  def add_favorite
-    @song.add_favorite(song)
-  end
+  # def increase_favorite
+  #   @song.increase_favorite(song)
+  #   redirect_to playlist_path(playlist_id)
+  # end
 
   # PATCH/PUT /songs/1
   # PATCH/PUT /songs/1.json
   def update
     respond_to do |format|
       if @song.update(update_song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
+        format.html { redirect_to playlist_path(params[:playlist_id]), notice: 'Song was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -72,6 +73,7 @@ class SongsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_song
       @song = Song.find(params[:id])
+      @playlist = Playlist.find(params[:playlist_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

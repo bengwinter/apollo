@@ -8,7 +8,7 @@
   <% end %>
     </ul>
   <% end %>
-    <%= link_to 'Add Song', new_song_path %></br>
+    <%= link_to 'Add Song', new_playlist_song_path(current_user.playlists.first) %></br>
     <%= link_to 'Add Playlist', new_playlist_path %></br>
 <% else %>
   <%= render 'landing' %>
