@@ -40,6 +40,10 @@ class SongsController < ApplicationController
     end
   end
 
+  def add_favorite
+    @song.add_favorite(song)
+  end
+
   # PATCH/PUT /songs/1
   # PATCH/PUT /songs/1.json
   def update

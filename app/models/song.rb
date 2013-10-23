@@ -8,7 +8,17 @@ class Song < ActiveRecord::Base
   def play(song_id)
     @song = Song.find(song_id)
     @track = SOUNDCLOUD_CLIENT.get('/resolve', :url => @song.url)
-    return @track.stream_url
+    # @stream_url = SOUNDCLOUD_CLIENT.get(@track.stream_url, :allow_redirects => true)
+    embed_html = SOUNDCLOUD_CLIENT.get('/oembed', :url => @track.permalink_url).html.html_safe
+    return embed_html
+  end
+
+  def order
+  end
+
+  def favorite(song)
+    current_user.playlists.find_by_name("Favorites") << song
+    increment!(favorites, by = 1)
   end
 
 end
@@ -26,3 +36,5 @@ end
 # client.get("/tracks/#{track.id}/comments").each do |comment|
 #   puts "Someone said: #{comment.body} at #{comment.timestamp}"
 # end
+
+#increment!(attribute, by = 1)

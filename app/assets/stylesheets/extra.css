@@ -1,3 +1,7 @@
+.container {
+  padding-bottom: 150px;
+}
+
 #top-bar-container {
   background-color: rgba(134, 134, 134, 1.0000);
 }
@@ -101,5 +105,8 @@
   height: 650px;
 }
 
-
+.player-box {
+  position: fixed;
+  bottom: 0;
+}
 
