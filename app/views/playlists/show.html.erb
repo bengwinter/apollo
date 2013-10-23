@@ -1,7 +1,7 @@
 <h3><%=@playlist.name %>
 <ul>
 <% @playlist.songs.each do |song| %>
-    <li><%= song.title + " ," + song.artist %></li>
+    <h5><%= song.url %></h5>
   <% end %>
 </ul>
 

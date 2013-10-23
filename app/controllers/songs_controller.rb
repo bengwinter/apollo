@@ -12,6 +12,11 @@ class SongsController < ApplicationController
   # GET /songs/new
   def new
     @song = Song.new
+    if params[:playlist_id].blank?
+      @playlist = current_user.playlists.find_by_name("All")
+    else
+      @playlist = Playlist.find(playlist_id)
+    end
   end
 
   # GET /songs/1/edit
@@ -22,12 +27,11 @@ class SongsController < ApplicationController
   # POST /songs.json
   def create
     @song = Song.new(add_song_params)
-
-    current_user.playlists.find(0).songs << @song
+    Playlist.find(playlist_id).songs << @song
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
+        format.html { redirect_to playlist_path(playlist_id), notice: 'Song was successfully created.' }
         format.json { render action: 'show', status: :created, location: @song }
       else
         format.html { render action: 'new' }
@@ -68,10 +72,14 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def add_song_params
-      params.require(:song).permit(:url)
+      params.require(:song).permit(:url, :playlist_id)
+    end
+    
+    def playlist_id
+      params.permit(:playlist_id)[:playlist_id]
     end
 
     def update_song_params
-      params.require(:song).permit(:url, :title, :artist, :genre, :user_id)
+      params.require(:song).permit(:url, :title, :artist, :genre, :playlist_id)
     end
 end

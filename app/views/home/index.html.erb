@@ -4,7 +4,7 @@
     <h3><%= link_to playlist.name, playlist %></h3>
     <ul>
     <% playlist.songs.each do |song| %>
-    <li><%= song.title + " ," + song.artist %></li>
+    <li><%= song.title %></li>
   <% end %>
     </ul>
   <% end %>
