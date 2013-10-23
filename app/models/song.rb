@@ -13,9 +13,6 @@ class Song < ActiveRecord::Base
     return embed_html
   end
 
-  def order
-  end
-
   def increase_favorite(song)
     current_user.playlists.find_by_name("Favorites") << song
     increment!(favorites, by = 1)

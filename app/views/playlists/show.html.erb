@@ -1,7 +1,6 @@
 <h3><%=@playlist.name %></h3><h6><%= link_to 'Edit Playlist', edit_playlist_path(@playlist.id) %></h6>
 <ul>
 <% @playlist.songs.each do |song| %>
-    <li><%= song.orders.find_by_song_id(song.id).order %>
     <%= song.url %>
     <a class="play-song-link" href='<%=song.play(song.id)%>'> Play Song </a>
     <%#= link_to 'Favorite', favorite_song_path(song.id) %>
