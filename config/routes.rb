@@ -1,13 +1,14 @@
 Apollo::Application.routes.draw do
   root to: 'home#index'
+  
 
   devise_for :users
-  
   resources :songs
-  
   resources :playlists do
     resources :songs
+    delete 'songs/:song_id' => 'song#delete', as: :delete_song_from_playlist
   end
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.
