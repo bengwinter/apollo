@@ -1,0 +1,8 @@
+<h3><%=@playlist.name %>
+<ul>
+<% @playlist.songs.each do |song| %>
+    <li><%= song.title + " ," + song.artist %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add Song', new_playlist_song_path(@playlist.id) %></br>
