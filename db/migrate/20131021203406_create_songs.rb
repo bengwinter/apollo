@@ -1,10 +1,10 @@
 class CreateSongs < ActiveRecord::Migration
   def change
     create_table :songs do |t|
-      t.string :title
-      t.string :artist
+      t.string :title, default: 'No Title'
+      t.string :artist, default: 'No Artist'
       t.string :url
-      t.string :source
+      t.string :source, default: 'SoundCloud'
       t.integer :plays
       t.integer :shares
       t.integer :favorites

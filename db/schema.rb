@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20131023183253) do
   add_index "orders", ["song_id"], name: "index_orders_on_song_id", using: :btree
 
   create_table "playlists", force: true do |t|
-    t.string  "name"
+    t.string  "name",    default: "Untitled Playlist"
     t.integer "user_id"
   end
 
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20131023183253) do
   add_index "playlists_songs", ["song_id"], name: "index_playlists_songs_on_song_id", using: :btree
 
   create_table "songs", force: true do |t|
-    t.string  "title"
-    t.string  "artist"
+    t.string  "title",     default: "No Title"
+    t.string  "artist",    default: "No Artist"
     t.string  "url"
-    t.string  "source"
+    t.string  "source",    default: "SoundCloud"
     t.integer "plays"
     t.integer "shares"
     t.integer "favorites"

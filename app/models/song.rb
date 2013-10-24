@@ -14,6 +14,7 @@ class Song < ActiveRecord::Base
   end
 
   def increase_favorite(a)
+    # need to fix increment method
     a.increment!(favorites, by = 1)
   end
 
