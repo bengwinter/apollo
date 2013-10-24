@@ -1,15 +1,12 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy, :increase_favorite]
 
-  # GET /songs
-  # GET /songs.json
   def index
   end
 
   def show
   end
 
-  # GET /songs/new
   def new
     @song = Song.new
     if params[:playlist_id].blank?
@@ -19,12 +16,9 @@ class SongsController < ApplicationController
     end
   end
 
-  # GET playlists/1/songs/1/edit
   def edit
   end
 
-  # POST /songs
-  # POST /songs.json
   def create
       @song = Song.where(add_song_params).first_or_create
       Playlist.find(playlist_id).songs << @song
@@ -40,13 +34,6 @@ class SongsController < ApplicationController
     end
   end
 
-  # def increase_favorite
-  #   @song.increase_favorite(song)
-  #   redirect_to playlist_path(playlist_id)
-  # end
-
-  # PATCH/PUT /songs/1
-  # PATCH/PUT /songs/1.json
   def update
     respond_to do |format|
       if @song.update(update_song_params)
@@ -59,14 +46,19 @@ class SongsController < ApplicationController
     end
   end
 
-  # DELETE /songs/1
-  # DELETE /songs/1.json
   def destroy
     Playlist.find(params[:playlist_id]).songs.delete(params[:id])
     respond_to do |format|
       format.html { redirect_to playlist_path(params[:playlist_id]) }
       format.json { head :no_content }
     end
+  end
+
+  def increase_favorite
+    binding.pry
+    @song.increase_favorite
+    current_user.playlists.find_by_name("Favorites") << @song
+    redirect_to playlist_path(playlist_id)
   end
 
   private

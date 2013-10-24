@@ -5,6 +5,7 @@
     <a class="play-song-link" href='<%=song.play(song.id)%>'> Play Song </a>
     <%#= link_to 'Favorite', favorite_song_path(song.id) %>
     <%= link_to 'Edit Song', edit_playlist_song_path(playlist_id: @playlist.id, id: song.id) %>
+    <%= button_to 'Favorite', { controller: "songs", :action => "increase_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
     <%= link_to 'Remove From Playlist', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
