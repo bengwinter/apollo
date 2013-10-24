@@ -26,8 +26,8 @@ class SongsController < ApplicationController
   # POST /songs
   # POST /songs.json
   def create
-    @song = Song.new(add_song_params)
-    Playlist.find(playlist_id).songs << @song
+      @song = Song.where(add_song_params).first_or_create
+      Playlist.find(playlist_id).songs << @song
 
     respond_to do |format|
       if @song.save
