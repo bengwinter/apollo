@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
   has_many :orders
   has_many :playlists, through: :orders
   
+  validates_uniqueness_of :url
   validates :url, presence: true
 
   def play(song_id)
