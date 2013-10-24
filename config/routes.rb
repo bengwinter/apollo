@@ -5,7 +5,9 @@ Apollo::Application.routes.draw do
   devise_for :users
   
   
-  post '/favorite' => 'songs#increase_favorite', as: :favorite_song
+  post '/favorite/add' => 'songs#add_favorite', as: :favorite_song
+  post '/favorite/remove' => 'songs#remove_favorite', as: :remove_favorite_song
+
 
   resources :playlists do
     resources :songs

@@ -54,7 +54,7 @@ class SongsController < ApplicationController
     end
   end
 
-  def increase_favorite
+  def add_favorite
     @song.favorite_increase(params[:id])
     current_user.playlists.find_by_name("Favorites").songs << @song
     redirect_to playlist_path(playlist_id)

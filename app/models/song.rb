@@ -17,4 +17,8 @@ class Song < ActiveRecord::Base
     Song.increment_counter(:favorites, song_id)
   end
 
+  def favorite_decrease(song_id)
+    Song.decrement_counter(:favorites, song_id)
+  end
+  
 end
