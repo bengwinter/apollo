@@ -13,9 +13,8 @@ class Song < ActiveRecord::Base
     return embed_html
   end
 
-  def increase_favorite(a)
-    # need to fix increment method
-    a.increment!(favorites, by = 1)
+  def favorite_increase(song_id)
+    Song.increment_counter(:favorites, song_id)
   end
 
 end

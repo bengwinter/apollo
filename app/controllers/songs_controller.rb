@@ -55,10 +55,8 @@ class SongsController < ApplicationController
   end
 
   def increase_favorite
-    binding.pry
-    #need to fix increment method
-    @song.increase_favorite
-    current_user.playlists.find_by_name("Favorites") << @song
+    @song.favorite_increase(params[:id])
+    current_user.playlists.find_by_name("Favorites").songs << @song
     redirect_to playlist_path(playlist_id)
   end
 
