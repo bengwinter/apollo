@@ -64,7 +64,7 @@ class SongsController < ApplicationController
   def destroy
     Playlist.find(params[:playlist_id]).songs.delete(params[:id])
     respond_to do |format|
-      format.html { redirect_to playlist_path(params[:playlist_id]) }#redirect to playlist
+      format.html { redirect_to playlist_path(params[:playlist_id]) }
       format.json { head :no_content }
     end
   end
@@ -86,6 +86,6 @@ class SongsController < ApplicationController
     end
 
     def update_song_params
-      params.require(:song).permit(:url, :title, :artist, :genre, :playlist_id)
+      params.require(:song).permit(:url, :title, :artist, :genre_id, :playlist_id)
     end
 end

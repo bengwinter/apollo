@@ -10,24 +10,33 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :title %><br>
+  <% if @song.title == "" %>
+    <%= f.label :title %></br>
     <%= f.text_field :title %>
+  <% else %>
+    <%= f.label :title %></br>
+    <%= f.text_field :title, readonly: f.object.persisted?  %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :artist %><br>
+  <% if @song.artist == "" %>
+    <%= f.label :artist %></br>
     <%= f.text_field :artist %>
+  <% else %>
+    <%= f.label :artist %></br>
+    <%= f.text_field :artist, readonly: f.object.persisted?  %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+  <% if @song.genre != nil %>  
+    <%= f.label :genre %><br>
+    <%= @song.genre.name %>
+  <% else %>
+    <%= f.label :genre %></br>
+    <%= collection_select(:song, :genre_id, Genre.all, :id, :name) %>
+  <% end %>
   </div>
-  <div class="field">
-  <%= f.label :genre %><br>
-  <%= collection_select(:song, :genre_id, Genre.all, :id, :name) %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
