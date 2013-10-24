@@ -8,8 +8,8 @@
     <% else %>
       <%= button_to 'Unfavorite', { controller: "songs", action: "remove_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
     <% end %>
-    <%= link_to 'Edit Song', edit_playlist_song_path(playlist_id: @playlist.id, song_id: song.id) %>
-    <%= link_to 'Remove From Playlist', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <%= link_to 'Edit Song', edit_playlist_song_path(playlist_id: @playlist.id, id: song.id) %>
+    <%= link_to 'Remove From Playlist', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id, order_id: @playlist.songs.find(song.id).orders.first.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
 
