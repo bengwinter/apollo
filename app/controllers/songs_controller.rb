@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :edit, :update, :destroy, :increase_favorite]
+  before_action :set_song, only: [:show, :edit, :update, :destroy, :add_favorite]
 
   def index
   end
@@ -55,8 +55,15 @@ class SongsController < ApplicationController
   end
 
   def add_favorite
-    @song.favorite_increase(params[:id])
+    @song.favorite_add(params[:id])
     current_user.playlists.find_by_name("Favorites").songs << @song
+    current_user.playlists.find_by_name("All").songs << @song
+    redirect_to playlist_path(playlist_id)
+  end
+
+  def remove_favorite
+    @song.remove_favorite(params[:id])
+    current_user.playlists.find_by_name("Favorites").songs.delete(params[:id])
     redirect_to playlist_path(playlist_id)
   end
 

@@ -1,14 +1,10 @@
 <% if user_signed_in? %>
-<h2> Your Songs </h2>
+<h2> Your Playlists </h2>
+<ul>
  <% current_user.playlists.each do |playlist| %>
-    <h3><%= link_to playlist.name, playlist %></h3>
-    <ul>
-    <% playlist.songs.each do |song| %>
-    <li><%= song.title + " by " + song.artist %>
-    <a class="play-song-link" href='<%=song.play(song.id)%>'> Play Song </a></li>
-  <% end %>
+    <li><%= link_to playlist.name, playlist %></li>
+    <% end %>
     </ul>
-  <% end %>
     <%= link_to 'Add Song', new_playlist_song_path(current_user.playlists.first) %></br>
     <%= link_to 'Add Playlist', new_playlist_path %></br>
 <% else %>

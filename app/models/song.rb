@@ -13,12 +13,12 @@ class Song < ActiveRecord::Base
     return embed_html
   end
 
-  def favorite_increase(song_id)
+  def favorite_add(song_id)
     Song.increment_counter(:favorites, song_id)
   end
 
-  def favorite_decrease(song_id)
+  def favorite_remove(song_id)
     Song.decrement_counter(:favorites, song_id)
   end
-  
+
 end
