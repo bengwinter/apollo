@@ -3,23 +3,14 @@
 <% @playlist.songs.each do |song| %>
     <li><%= song.title + " by " + song.artist %>
     <a class="play-song-link" href='<%= song.play(song.id) %>'> Play Song </a>
-    <%= link_to 'Edit Song', edit_playlist_song_path(playlist_id: @playlist.id, id: song.id) %>
-    <% if current_user.playlists.find_by_name("Favorites").songs.find(song.id) != song %>
+    <% if current_user.playlists.find_by_name("Favorites").songs.include?(song) == nil %>
       <%= button_to 'Favorite', { controller: "songs", action: "add_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
-      <% else %>
+    <% else %>
       <%= button_to 'Unfavorite', { controller: "songs", action: "remove_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
     <% end %>
-    <%= song.favorites %>
+    <%= link_to 'Edit Song', edit_playlist_song_path(playlist_id: @playlist.id, song_id: song.id) %>
     <%= link_to 'Remove From Playlist', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
 
 
-<!-- begin
-  # Inside the begin goes the code that *might* post a problem
-  result = first / second
-rescue ZeroDivisionError => error_message
-  # Inside the rescue goes the code that we want to run if a 
-  # specific error occurs
-  puts error_message
-end -->

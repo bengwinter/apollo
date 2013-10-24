@@ -47,6 +47,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     Playlist.find(params[:playlist_id]).songs.delete(params[:id])
     respond_to do |format|
       format.html { redirect_to playlist_path(params[:playlist_id]) }
