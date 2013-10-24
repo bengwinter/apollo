@@ -9,8 +9,10 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.new
   end
 
+  # GET /songs/1
   def show
   end
+
   # GET /songs/1/edit
   def edit
   end
@@ -57,6 +59,7 @@ class PlaylistsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_playlist
+      binding.pry
       @playlist = Playlist.find(params[:id])
     end
 
