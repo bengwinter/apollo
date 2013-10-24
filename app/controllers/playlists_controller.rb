@@ -59,7 +59,6 @@ class PlaylistsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_playlist
-      binding.pry
       @playlist = Playlist.find(params[:id])
     end
 

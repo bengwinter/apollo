@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # username gem for creation
+gem 'rails_12factor'
 gem 'devise'
 gem 'annotate'
 gem 'pry-rails'
