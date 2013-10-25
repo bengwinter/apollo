@@ -23,7 +23,6 @@
     @song = Song.where(add_song_params).first_or_create
     @playlist = Playlist.find(playlist_id)
     @playlist.songs << @song
-    @song.orders.last.update(order: @playlist.orders.last.order + 1)
 
     respond_to do |format|
       if @song.save
@@ -34,6 +33,7 @@
         format.json { render json: @song.errors, status: :unprocessable_entity }
       end
     end
+    @song.orders.last.update(order: @playlist.orders.last.order + 1)
   end
 
   def update
