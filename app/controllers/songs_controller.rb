@@ -35,7 +35,6 @@
   end
 
   def update
-    binding.pry
     respond_to do |format|
       if @song.update(update_song_params)
         format.html { redirect_to playlist_path(params[:playlist_id]), notice: 'Song was successfully updated.' }
@@ -85,6 +84,6 @@
     end
 
     def update_song_params
-      params.require(:song).permit(:url, :title, :artist, :genre_ids, :playlist_id)
+      params.require(:song).permit(:url, :title, :artist, :playlist_id, genre_ids: [])
     end
 end
