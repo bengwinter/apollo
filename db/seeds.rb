@@ -30,17 +30,8 @@ dreams = Song.create(title: "Dreams", artist: "wet", url: "https://soundcloud.co
 sand_fingers = Song.create(title: "Sand Through Fingers", artist: "Handbook", url: "https://soundcloud.com/handbook/handbook-sand-through-fingers", source: "SoundCloud", plays: 24, shares: 1, favorites: 5)
 white_tiger = Song.create(title: "White Tiger Remix", artist: "Izzy Bizu", url: "https://soundcloud.com/wantigga/white-tiger-wantigga-remix", source: "SoundCloud", plays: 7, shares: 32, favorites: 7)
 
-# hip_hop.songs << lovin_it 
-# hip_hop.songs << whisky 
-# hip_hop.songs << summer 
-# hip_hop.songs << termanology
-# # electronic.songs << whisky
-# electronic.songs << eden 
-# electronic.songs << undiscovered 
-# electronic.songs << mean_streets 
-# electronic.songs << dreams 
-# electronic.songs << sand_fingers 
-# electronic.songs << white_tiger
-# playlist_1.songs << lovin_it << whisky << eden
-# playlist_2.songs << undiscovered << summer
-# playlist_3.songs << mean_streets << dreams << sand_fingers << white_tiger
+hip_hop.songs << lovin_it << whisky << summer << termanology << eden
+electronic.songs << whisky << eden << undiscovered << mean_streets << dreams << sand_fingers << white_tiger
+playlist_1.songs << lovin_it << whisky << eden
+playlist_2.songs << undiscovered << summer
+playlist_3.songs << mean_streets << dreams << sand_fingers << white_tiger
