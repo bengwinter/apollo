@@ -1,5 +1,5 @@
 class Song < ActiveRecord::Base
-  belongs_to :genre
+  has_many :genres
   has_many :orders
   has_many :playlists, through: :orders
   
