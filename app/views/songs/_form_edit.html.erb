@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+  <div class="title-field">
   <% if @song.title == "" %>
     <%= f.label :title %></br>
     <%= f.text_field :title %>
@@ -19,7 +19,7 @@
     <%= f.text_field :title, readonly: f.object.persisted?  %>
   <% end %>
   </div>
-  <div class="field">
+  <div class="arist-field">
   <% if @song.artist == "" %>
     <%= f.label :artist %></br>
     <%= f.text_field :artist %>
@@ -28,13 +28,13 @@
     <%= f.text_field :artist, readonly: f.object.persisted?  %>
   <% end %>
   </div>
-  <div class="field">
+  <div class="genre-field">
   <% if @song.genre != nil %>  
     <%= f.label :genre %><br>
     <%= @song.genre.name %>
   <% else %>
-    <%= f.label :genre %></br>
-    <%= collection_select(:song, :genre_id, Genre.all, :id, :name) %>
+    <%= f.label :genre %>
+    <%= collection_check_boxes(:song, :genre_ids, Genre.order(:name), :id, :name, prompt: true)%>
   <% end %>
   </div>
   <div class="actions">
