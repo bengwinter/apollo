@@ -21,7 +21,8 @@
 
   def create
     @song = Song.where(add_song_params).first_or_create
-    Playlist.find(playlist_id).songs << @song
+    @playlist = Playlist.find(playlist_id)
+    @playlist.songs << @song
     binding.pry
 
     respond_to do |format|
