@@ -32,6 +32,3 @@ white_tiger = Song.create(title: "White Tiger Remix", artist: "Izzy Bizu", url: 
 
 hip_hop.songs << lovin_it << whisky << summer << termanology << eden
 electronic.songs << whisky << eden << undiscovered << mean_streets << dreams << sand_fingers << white_tiger
-playlist_1.songs << lovin_it << whisky << eden
-playlist_2.songs << undiscovered << summer
-playlist_3.songs << mean_streets << dreams << sand_fingers << white_tiger
