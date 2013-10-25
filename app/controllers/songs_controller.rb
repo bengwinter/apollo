@@ -23,7 +23,7 @@
     @song = Song.where(add_song_params).first_or_create
     @playlist = Playlist.find(playlist_id)
     @playlist.songs << @song
-    binding.pry
+    @song.orders.last.update(order: @playlist.orders.last.order + 1)
 
     respond_to do |format|
       if @song.save
