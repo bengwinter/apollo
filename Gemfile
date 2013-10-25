@@ -21,7 +21,6 @@ gem 'rails_12factor'
 gem 'devise'
 gem 'annotate'
 gem 'pry-rails'
-
 gem 'dotenv-rails'
 
 gem 'soundcloud'
@@ -36,6 +35,14 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+group :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+end 
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
