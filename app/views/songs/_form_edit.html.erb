@@ -29,13 +29,8 @@
   <% end %>
   </div>
   <div class="genre-field">
-  <% if @song.genre != nil %>  
-    <%= f.label :genre %><br>
-    <%= @song.genre.name %>
-  <% else %>
-    <%= f.label :genre %>
-    <%= collection_check_boxes(:song, :genre_ids, Genre.order(:name), :id, :name, prompt: true)%>
-  <% end %>
+    <%= f.label :genres %>
+    <%= collection_check_boxes(:song, :genres, Genre.order(:name), :id, :name, prompt: true, disabled: true) %>
   </div>
   <div class="actions">
     <%= f.submit %>

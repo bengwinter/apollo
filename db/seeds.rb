@@ -34,6 +34,7 @@ hip_hop.songs << lovin_it
 hip_hop.songs << whisky 
 hip_hop.songs << summer 
 hip_hop.songs << termanology
+electronic.songs << whisky 
 electronic.songs << eden 
 electronic.songs << undiscovered 
 electronic.songs << mean_streets 

@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy, :add_favorite, :remove_favorite]
 
   def index
@@ -35,6 +35,7 @@ class SongsController < ApplicationController
   end
 
   def update
+    binding.pry
     respond_to do |format|
       if @song.update(update_song_params)
         format.html { redirect_to playlist_path(params[:playlist_id]), notice: 'Song was successfully updated.' }
