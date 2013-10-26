@@ -6,6 +6,9 @@ class AutolistController < ApplicationController
   def recent_added
   end
 
+  def recent_played
+  end
+
   def top_played
   end
 
