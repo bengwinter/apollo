@@ -5,7 +5,7 @@
     <li><%= link_to playlist.name, playlist %></li>
     <% end %>
     </ul>
-    <%= link_to 'Add Song', new_playlist_song_path(current_user.playlists.first) %></br>
+    <%= link_to 'Add Song', new_playlist_song_path(current_user.playlists.find_by_name("All")) %></br>
     <%= link_to 'Add Playlist', new_playlist_path %></br>
 <% else %>
   <%= render 'landing' %>
