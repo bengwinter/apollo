@@ -5,20 +5,20 @@
   devise_for :users
   
  
-  get '/top_played' => 'autolists#top_played', as: :top_played
-  get '/recent_added' => 'autolists#recent_added', as: :recent_added
-  get '/recent_played' => 'autolists#recent_played', as: :recent_played
-  get '/:genre_name' => 'autolists#genre', as: :genre_page
-  get '/:artist' => 'autolists#artist', as: :artist
+  # get '/top_played' => 'autolists#top_played', as: 'top_played'
+  # get '/recent_added' => 'autolists#recent_added', as: 'recent_added'
+  # get '/recent_played' => 'autolists#recent_played', as: 'recent_played'
+  get '/genres/:id' => 'playlists#genrelist', as: 'genre_page'
+  # get '/artists/:id' => 'autolists#artist', as: 'artist_page'
 
-  post '/favorite/add' => 'songs#add_favorite', as: :favorite_song
-  post '/favorite/remove' => 'songs#remove_favorite', as: :remove_favorite_song
+  post '/favorite/add' => 'songs#add_favorite', as: 'favorite_song'
+  post '/favorite/remove' => 'songs#remove_favorite', as: 'remove_favorite_song'
   
   
 
   resources :playlists do
     resources :songs
-    delete 'songs/:song_id' => 'songs#delete', as: :delete_song_from_playlist
+    delete 'songs/:song_id' => 'songs#delete', as: 'delete_song_from_playlist'
   end
 
   

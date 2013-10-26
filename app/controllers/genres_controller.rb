@@ -1,3 +1,0 @@
-class GenreController < ApplicationController
-
-end

@@ -56,6 +56,13 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def genrelist
+    # params.require(:genre).permit(:genre_name)
+    binding.pry
+    genre = params[:id].capitalize
+    @genre_playlist = Genre.where(name: genre).first
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_playlist
