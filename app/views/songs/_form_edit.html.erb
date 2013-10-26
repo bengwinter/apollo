@@ -10,8 +10,12 @@
       </ul>
     </div>
   <% end %>
+  <div class="url-field">
+    <%= f.label :url %></br>
+    <%= f.text_field :url, readonly: f.object.persisted?  %>
+  </div>
   <div class="title-field">
-  <% if @song.title == "" %>
+  <% if @song.title == "No Title" %>
     <%= f.label :title %></br>
     <%= f.text_field :title %>
   <% else %>
@@ -20,7 +24,7 @@
   <% end %>
   </div>
   <div class="arist-field">
-  <% if @song.artist == "" %>
+  <% if @song.artist == "No Artist" %>
     <%= f.label :artist %></br>
     <%= f.text_field :artist %>
   <% else %>

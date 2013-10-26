@@ -1,5 +1,5 @@
 <ul>
-<% @genre_playlist.songs.each do |song| %>
+<% @genre_playlist.songs.sort_by{ |s| s.title }.each do |song| %>
     <li><%= song.title + " by " + song.artist %>
     <a class="play-song-link" href='<%= song.play(song.id) %>'> Play Song </a>
     <% if current_user.playlists.find_by_name("Favorites").songs.include?(song) == nil %>
@@ -7,7 +7,7 @@
     <% else %>
       <%= button_to 'Unfavorite', { controller: "songs", action: "remove_favorite", genre_name: @genre_playlist.name, id: song.id }, method: :post %>
     <% end %>
-
-
   <% end %>
 </ul>
+
+<%= link_to 'Back', root_path %></br>

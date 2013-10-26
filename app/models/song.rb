@@ -5,6 +5,8 @@ class Song < ActiveRecord::Base
   
   validates :url, presence: true
 
+  before_update :capitalize
+
   def play(song_id)
     @song = Song.find(song_id)
     @track = SOUNDCLOUD_CLIENT.get('/resolve', url: @song.url)
@@ -19,6 +21,11 @@ class Song < ActiveRecord::Base
 
   def favorite_remove(song_id)
     Song.decrement_counter(:favorites, song_id)
+  end
+
+  def capitalize
+    self.title = self.title.split(' ').map {|w| w.capitalize }.join(' ')
+    self.artist = self.artist.split(' ').map {|w| w.capitalize }.join(' ')
   end
 
 end
