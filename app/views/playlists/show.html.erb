@@ -15,7 +15,8 @@
     <%= link_to 'Remove From Playlist', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id, order_id: @playlist.songs.find(song.id).orders.first.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
-
-<%= link_to 'Add Song', new_playlist_song_path(@playlist.id) %></br>
+<% unless @playlist.name == "All" || @playlist.name == "Favorites" || @playlist.name == "Shared" %>
+  <%= link_to 'Add Song', new_playlist_song_path(@playlist.id) %></br>
+<% end %>
 <%= link_to 'Back', root_path %></br>
 <%= link_to 'Delete Playlist', @playlist, method: :delete, data: { confirm: 'Are you sure?' } %>
