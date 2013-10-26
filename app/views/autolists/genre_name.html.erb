@@ -1,0 +1,12 @@
+<h3><%= params[:genre_name] %></h3>
+<ul>
+<% @genre_playlist.songs.each do |song| %>
+    <li><%= song.title + " by " + song.artist %>
+    <a class="play-song-link" href='<%= song.play(song.id) %>'> Play Song </a>
+    <% if current_user.playlists.find_by_name("Favorites").songs.include?(song) == nil %>
+      <%= button_to 'Favorite', { controller: "songs", action: "add_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
+    <% else %>
+      <%= button_to 'Unfavorite', { controller: "songs", action: "remove_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
+    <% end %>
+  <% end %>
+</ul>

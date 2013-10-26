@@ -1,7 +1,8 @@
 class AutolistController < ApplicationController
 
   def genre
-  end
+    params.require(:song).permit(:genre_name)
+    @genre_playlist = Genre.where(name: params[:genre_name]).first
 
   def recent_added
   end
