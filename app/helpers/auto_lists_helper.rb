@@ -1,0 +1,2 @@
+module AutoListsHelper
+end

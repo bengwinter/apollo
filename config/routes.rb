@@ -8,7 +8,7 @@
   # get '/top_played' => 'autolists#top_played', as: 'top_played'
   # get '/recent_added' => 'autolists#recent_added', as: 'recent_added'
   # get '/recent_played' => 'autolists#recent_played', as: 'recent_played'
-  get '/genres/:id' => 'playlists#genrelist', as: 'genre_page'
+  get '/genres/:genre_name' => 'auto_lists#genre', as: 'genre_page'
   # get '/artists/:id' => 'autolists#artist', as: 'artist_page'
 
   post '/favorite/add' => 'songs#add_favorite', as: 'favorite_song'
