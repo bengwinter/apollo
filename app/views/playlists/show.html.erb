@@ -1,6 +1,7 @@
 <h3><%=@playlist.name %></h3>
-
-<h6><%= link_to 'Edit Playlist', edit_playlist_path(@playlist.id) %></h6>
+<h6><% unless @playlist.name == "All" || @playlist.name == "Favorites" || @playlist.name == "Shared" %>
+  <%= link_to 'Edit Playlist', edit_playlist_path(@playlist.id) %></h6>
+  <% end %>
 <ul>
 <% @playlist.songs.each do |song| %>
     <li><%= song.title + " by " + song.artist %>
