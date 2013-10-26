@@ -1,10 +1,20 @@
-<% if @playlist.name == "Favorites" %>
-  <%= render 'favorites' %>
-<% elsif @playlist.name == "All" || @playlist.name == "Shared" %>
-  <%= render 'all_shared' %>
-<% else %>
-  <%= render 'regular' %>
-<% end %>
+<h3><%=@playlist.name %></h3>
+
+<h6><%= link_to 'Edit Playlist', edit_playlist_path(@playlist.id) %></h6>
+<ul>
+<% @playlist.songs.each do |song| %>
+    <li><%= song.title + " by " + song.artist %>
+    <a class="play-song-link" href='<%= song.play(song.id) %>'> Play Song </a>
+    <% if current_user.playlists.find_by_name("Favorites").songs.include?(song) == nil %>
+      <%= button_to 'Favorite', { controller: "songs", action: "add_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
+    <% else %>
+      <%= button_to 'Unfavorite', { controller: "songs", action: "remove_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %>
+    <% end %>
+    <%= link_to 'Edit Song', edit_playlist_song_path(playlist_id: @playlist.id, id: song.id) %>
+    <%= link_to 'Remove From Playlist', playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id, order_id: @playlist.songs.find(song.id).orders.first.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Add Song', new_playlist_song_path(@playlist.id) %></br>
 <%= link_to 'Back', root_path %></br>
 <%= link_to 'Delete Playlist', @playlist, method: :delete, data: { confirm: 'Are you sure?' } %>
