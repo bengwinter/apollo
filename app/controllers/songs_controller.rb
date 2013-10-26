@@ -41,7 +41,7 @@
   def update
     respond_to do |format|
       if @song.update(update_song_params)
-        format.html { redirect_to playlist_path(params[:playlist_id]), notice: 'Song was successfully updated.' }
+        format.html { redirect_to   ), notice: 'Song was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -1,4 +1,4 @@
-Apollo::Application.routes.draw do
+    Apollo::Application.routes.draw do
   root to: 'home#index'
   
 
@@ -7,9 +7,10 @@ Apollo::Application.routes.draw do
   
   post '/favorite/add' => 'songs#add_favorite', as: :favorite_song
   post '/favorite/remove' => 'songs#remove_favorite', as: :remove_favorite_song
-
+  
 
   resources :playlists do
+
     resources :songs
     delete 'songs/:song_id' => 'songs#delete', as: :delete_song_from_playlist
   end
