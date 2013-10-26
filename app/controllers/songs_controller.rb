@@ -23,6 +23,8 @@
     @song = Song.where(add_song_params).first_or_create
     @playlist = Playlist.find(playlist_id)
     @playlist.songs << @song
+    all = current_user.playlists.find_by_name("All") 
+    all.songs << @song unless all.songs.include?(@song) 
 
     respond_to do |format|
       if @song.save
