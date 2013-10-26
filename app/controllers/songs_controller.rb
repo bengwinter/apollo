@@ -33,6 +33,7 @@
         format.json { render json: @song.errors, status: :unprocessable_entity }
       end
     end
+    binding.pry
     @song.orders.last.update(order: @playlist.orders.last.order + 1)
   end
 
