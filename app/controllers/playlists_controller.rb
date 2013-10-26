@@ -24,7 +24,7 @@ class PlaylistsController < ApplicationController
     respond_to do |format|
       if @playlist.save
         current_user.playlists << @playlist
-        format.html { redirect_to root_url, notice: 'Playlist was successfully created.' }
+        format.html { redirect_to playlist_path(@playlist.id), notice: 'Playlist was successfully created.' }
         format.json { render action: 'show', status: :created, location: @plalist }
 
       else

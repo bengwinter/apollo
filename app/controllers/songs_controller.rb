@@ -33,8 +33,7 @@
         format.json { render json: @song.errors, status: :unprocessable_entity }
       end
     end
-    binding.pry
-    @song.orders.last.update(order: @playlist.orders.last.order + 1)
+    @song.orders.last.update(order_num: @playlist.orders.order("order_num DESC").first.order_num + 1)
   end
 
   def update
