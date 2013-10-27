@@ -2,6 +2,8 @@
   padding-bottom: 150px;
 }
 
+
+
 #top-bar-container {
   background-color: rgba(134, 134, 134, 1.0000);
 }
@@ -110,3 +112,7 @@
   bottom: 0;
 }
 
+#landing-page {
+  background-image: http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png;
+  background-size: cover;
+}
