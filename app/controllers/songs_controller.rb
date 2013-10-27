@@ -23,20 +23,18 @@
   def create
     @song = Song.where(add_song_params).first_or_create
     @playlist = Playlist.find(params[:playlist_id])
-    @playlist.songs << @song
-    all = current_user.playlists.find_by_name("All") 
-    all.songs << @song unless all.songs.include?(@song) 
-
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to playlist_path(playlist_id), notice: 'Song was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @song }
+      if @song.valid? 
+        respond_to do |format|
+          @playlist.songs << @song
+          all = current_user.playlists.find_by_name("All") 
+          all.songs << @song unless all.songs.include?(@song)
+          @song.orders.last.update(order_num: @playlist.orders.order("order_num DESC").first.order_num + 1)
+          format.html { redirect_to playlist_path(@playlist.id), notice: 'Song was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @playlist }
+        end
       else
-        format.html { render action: 'new' }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
+        redirect_to( new_playlist_song_path(params[:playlist_id]), alert: "Please enter a valid URL")
       end
-    end
-    @song.orders.last.update(order_num: @playlist.orders.order("order_num DESC").first.order_num + 1)
   end
 
   def update

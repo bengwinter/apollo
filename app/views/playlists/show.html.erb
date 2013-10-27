@@ -38,8 +38,11 @@
       <% end %>
     </span>
   </div>
-  <% end %>
+  </br>
+<% end %>
 </div>
+
+
 
 <% unless @playlist.name == "Favorites" || @playlist.name == "Shared" %>
   <%= link_to 'Add Song', new_playlist_song_path(@playlist.id) %></br>
