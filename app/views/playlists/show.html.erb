@@ -3,47 +3,48 @@
   <%= link_to 'Edit Playlist', edit_playlist_path(@playlist.id) %></h6>
   <% end %>
 
-<div class='five columns song-playlist'>
-  <table width='900' align="center">
+<div class='five columns song-playlist' width='900' align="center">
   <% @playlist.songs.sort_by{ |s| s.title }.each do |song| %>
-  <tr>
-    <td align="left" width="125" valign="middle">
-      <a class="play-song-link" href='<%= song.play(song.id) %>'> 
-      <img src="http://s3.amazonaws.com/ApolloApp/Landing+Page/play-button.png" alt="play" width="200"/>
+  <div class='one-song' style="border-style: solid; border-width: 3px; color: red">
+      <!-- column one -->
+      <span width="125" style="float: left">
+        <img src="http://s3.amazonaws.com/ApolloApp/Landing+Page/play-button.png" alt="play" width="200"/>
       </a>
-    </td>
-    <td width="150">
-    <div class="song-attributes">
-    <% if current_user.playlists.find_by_name("Favorites").songs.include?(song) == nil %>
-      <h5><%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_308_share_alt.png", alt: "favorite"), { controller: "songs", action: "add_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %><%= song.favorites %></h5>
-    <% else %>
-      <h5><%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_048_dislikes.png", alt: "unfavorite"), { controller: "songs", action: "remove_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %><%= song.favorites %></h5>
-    <% end %>
-    <h5><img src="http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_173_play.png" alt="play">&nbsp;&nbsp;&nbsp;&nbsp;xx</h5>
-    <h5><img src="http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_308_share_alt.png" alt="share">&nbsp;&nbsp;xx</h5>
-    </div>
-    </td>
-
-    <td width="400">
-      <div class='song-title'>
-      <h4><%= song.title %></h4>
+    </span>
+    <!-- column two -->
+    <span width="150" style="float: left">
+      <span class="song-attributes">
+        <% if current_user.playlists.find_by_name("Favorites").songs.include?(song) == nil %>
+        <h5><%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_308_share_alt.png", alt: "favorite"), { controller: "songs", action: "add_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %><%= song.favorites %></h5>
+        <% else %>
+        <h5><%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_048_dislikes.png", alt: "unfavorite"), { controller: "songs", action: "remove_favorite", playlist_id: @playlist.id, id: song.id }, method: :post %><%= song.favorites %></h5>
+        <% end %>
+        <h5><img src="http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_173_play.png" alt="play">&nbsp;&nbsp;&nbsp;&nbsp;xx</h5>
+        <h5><img src="http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_308_share_alt.png" alt="share">&nbsp;&nbsp;xx</h5>
+      </span>
+    </span>
+    <!-- column three -->
+    <span width="400" style="float: left">
+      <span class='song-title'>
+        <h4><%= song.title %></h4>
         <h5><%= song.artist %></h5>
-      </div>
-    </td>
-
-    <td width="75">
-    <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/gear.png", alt: "edit", width: "75px"), edit_playlist_song_path(playlist_id: @playlist.id, id: song.id) %>
-    <% unless @playlist.name == "All" || @playlist.name == "Favorites" || @playlist.name == "Shared" %>
-    <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/bin.png", alt: "delete", width: "75px"), playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id, order_id: @playlist.songs.find(song.id).orders.first.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    </td>
-  </tr>
-<% end %>
-</table>
+      </span>
+    </span>
+    <!-- column four -->
+    <span width="75" style="float: left">
+      <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/gear.png", alt: "edit", width: "75px"), edit_playlist_song_path(playlist_id: @playlist.id, id: song.id) %>
+      <% unless @playlist.name == "All" || @playlist.name == "Favorites" || @playlist.name == "Shared" %>
+      <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/bin.png", alt: "delete", width: "75px"), playlist_delete_song_from_playlist_path(playlist_id: @playlist.id, song_id: song.id, order_id: @playlist.songs.find(song.id).orders.first.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </span>
+  </div>
+  <% end %>
 </div>
 
-<% unless @playlist.name == "All" || @playlist.name == "Favorites" || @playlist.name == "Shared" %>
+<% unless @playlist.name == "Favorites" || @playlist.name == "Shared" %>
   <%= link_to 'Add Song', new_playlist_song_path(@playlist.id) %></br>
 <% end %>
+<% unless @playlist.name == "All" || @playlist.name == "Favorites" || @playlist.name == "Shared" %>
+  <%= link_to 'Delete Playlist', @playlist, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <%= link_to 'Back', root_path %></br>
-<%= link_to 'Delete Playlist', @playlist, method: :delete, data: { confirm: 'Are you sure?' } %>

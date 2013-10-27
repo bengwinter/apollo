@@ -49,7 +49,6 @@ GEM
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
-    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (2.0.2)
     hashie (2.0.5)
@@ -168,7 +167,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dotenv-rails
-  dynamic_form
   jbuilder (~> 1.2)
   jquery-rails
   pg
