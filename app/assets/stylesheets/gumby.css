@@ -2363,7 +2363,7 @@ i[class^="icon-"], i[class*=" icon-"] { display: inline-block; position: static;
 
 /* Form Styles */
 form { margin: 0 0 18px; }
-form label { display: block; font-size: 16px; font-size: 1rem; line-height: 1.625em; cursor: pointer; margin-bottom: 9px; }
+form label { display: inline-block; font-size: 16px; font-size: 1rem; line-height: 1.625em; cursor: pointer; }
 form label.inline { display: inline-block; padding-right: 20px; }
 form dt { margin: 0; }
 form textarea { height: 150px; }

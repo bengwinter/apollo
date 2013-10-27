@@ -8,7 +8,7 @@
     <%= link_to 'Add Song', new_playlist_song_path(current_user.playlists.find_by_name("All")) %></br>
     <%= link_to 'Add Playlist', new_playlist_path %></br>
 <% else %>
-<div id= "landing-page">
+<div class="landing-page">
   <%= render 'landing' %>
 </div>
 <% end %>

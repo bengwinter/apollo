@@ -22,10 +22,14 @@
 
 /** Landing Page **/
 
-#landing-page {
+.landing-page {
   background-image: url(http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png);
   background-size: cover;
+  height: 750px;
+  padding-top: 50px;
+  margin-top: -10px;
 }
+
 
 /** All Pages **/
 
@@ -58,4 +62,65 @@
 .navbar-welcome {
   text-align: right;
   width: 25%;
+}
+
+
+/** Form Styling **/
+
+.fieldset {
+margin-left: 20px;
+}
+
+.line-height {
+line-height: 5px
+}
+
+input {
+font-family: Roboto;
+font-size: 20px;
+text-align: center;
+font-weight: 100;
+margin: 0px 1px;
+color: #666;
+border: 1px solid #999;
+width: 200px;
+padding: 15px;
+}
+
+
+.landing-page-form-field {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.submit-button-landing-form {
+  text-align: center;
+}
+
+
+.form-background {
+  background-color: rgba(256, 256, 256, .50);
+  text-align: left;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 20px;
+  color: rgba(55, 66, 127, 1.0000);
+  padding: 20px;
+}
+
+.form-background h2 {
+  color: rgba(55, 66, 127, 1.0000);
+  text-align: center;
+}
+
+input[type="submit"] {
+width: auto;
+font-size: 18px;
+background-color: rgba(55, 66, 127, 1.0000);
+font-weight: 500;
+color: #FFF;
+border: 1px;
+border-radius: 10px;
+text-transform: lowercase;
 }
