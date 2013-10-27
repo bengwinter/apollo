@@ -113,6 +113,6 @@
 }
 
 #landing-page {
-  background-image: http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png;
+  background-image: url(http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png);
   background-size: cover;
 }

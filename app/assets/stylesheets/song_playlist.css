@@ -1,0 +1,51 @@
+.song-playlist{
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(55, 66, 127, 1.0000);
+  
+}
+
+.song-title h4 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.song-title h5 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.song-playlist-play{
+  display: inline-block;
+}
+
+.song-playlist-title{
+  display: inline-block;
+}
+
+.song-playlist-artist{
+  display: inline-block;
+}
+  
+
+.song-playlist-plays{
+  display: inline-block;
+}
+  
+  
+.song-playlist-shares{
+  display: inline-block;
+}
+  
+  
+.song-playlist-favorites{
+  display: inline-block;
+}
+  
+
+.song-playlist-edit{
+  display: inline-block;
+}
+
+
+.song-playlist-remove{
+  display: inline-block;
+}
