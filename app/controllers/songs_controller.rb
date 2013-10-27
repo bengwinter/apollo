@@ -21,7 +21,6 @@
   end
 
   def create
-    if @song.url == nil
     @song = Song.where(add_song_params).first_or_create
     @playlist = Playlist.find(params[:playlist_id])
     @playlist.songs << @song
