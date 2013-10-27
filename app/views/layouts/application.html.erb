@@ -11,9 +11,13 @@
 <body>
 
 <%= render 'layouts/navbar' %>
-  <% flash.each do |name, msg| %>
+
+<div class="danger alert">
+<% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash#{name}" %>
 <% end %>
+</div>
+
 <div class='container'>
 <%= yield %>
 </div>
