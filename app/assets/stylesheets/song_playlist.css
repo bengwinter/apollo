@@ -16,39 +16,3 @@
 .song-attributes h5 {
   text-align: left;
 }
-.song-playlist-play{
-  display: inline-block;
-}
-
-.song-playlist-title{
-  display: inline-block;
-}
-
-.song-playlist-artist{
-  display: inline-block;
-}
-  
-
-.song-playlist-plays{
-  display: inline-block;
-}
-  
-  
-.song-playlist-shares{
-  display: inline-block;
-}
-  
-  
-.song-playlist-favorites{
-  display: inline-block;
-}
-  
-
-.song-playlist-edit{
-  display: inline-block;
-}
-
-
-.song-playlist-remove{
-  display: inline-block;
-}
