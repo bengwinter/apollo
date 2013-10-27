@@ -1,8 +1,27 @@
-<% if user_signed_in? %>
+<div class="nav-bar twelve columns">
+  <div class="nav-logo three columns">
+    <h4><img src="https://s3.amazonaws.com/ApolloApp/Landing+Page/apollologo.png" width="25">Apollo</h4>
+  </div>
+  <div class="nav-bar-player six columns">
+    <h4>Placeholder for music player</h4>
+  </div>
+  <div class="navbar-welcome three columns">
+  <% if user_signed_in? %>
   <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
-  <%= current_user.email %>
-  <%= link_to "Edit User", edit_user_registration_path %>
-<% else %>
-  <%= link_to "Sign Up", new_user_registration_path %>
-  <%= link_to "Sign In", new_user_session_path %>
-<% end %>
+    <h3>Welcome <% if current_user.first_name != nil %>
+      <%= current_user.first_name %>
+      <% else %>
+      <%= "" %>
+      <% end %>
+    </h3>
+    <div class="navbar-settings">
+      <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_280_settings.png", alt: "user settings"), edit_user_registration_path %>
+    </div>
+    <% else %>
+    <div class="register">
+      <h5><%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %></h5>
+    </div>
+    <% end %>
+  </div>
+</div>

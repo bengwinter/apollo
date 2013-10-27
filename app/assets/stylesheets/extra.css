@@ -1,9 +1,3 @@
-.container {
-  padding-bottom: 150px;
-}
-
-
-
 #top-bar-container {
   background-color: rgba(134, 134, 134, 1.0000);
 }
@@ -110,9 +104,4 @@
 .player-box {
   position: fixed;
   bottom: 0;
-}
-
-#landing-page {
-  background-image: url(http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png);
-  background-size: cover;
 }

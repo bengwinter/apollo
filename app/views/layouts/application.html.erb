@@ -9,14 +9,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="nav-bar">
 <%= render 'layouts/navbar' %>
+</div><br/>
 
-<div class="danger alert">
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash#{name}" %>
+  <div class="danger alert">
+    <%= content_tag :div, msg, :id => "flash#{name}" %>
+  </div>
 <% end %>
-</div>
 
 <div class='container'>
 <%= yield %>

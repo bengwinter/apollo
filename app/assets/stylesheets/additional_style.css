@@ -1,0 +1,61 @@
+/** Song Icon Styling **/
+
+.song-playlist{
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(55, 66, 127, 1.0000);
+  
+}
+
+.song-title h4 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.song-title h5 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.song-attributes h5 {
+  text-align: left;
+}
+
+
+/** Landing Page **/
+
+#landing-page {
+  background-image: url(http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png);
+  background-size: cover;
+}
+
+/** All Pages **/
+
+.container {
+  padding-bottom: 150px;
+}
+
+/** Navigation Bar **/
+
+.nav-bar {
+  background-color: rgba(0, 0, 0, 1.0000);
+  width: 100%;
+  vertical-align: middle;
+}
+
+.nav-logo h4 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.nav-logo {
+  width: 25%;
+}
+
+.nav-bar-player {
+  background-color: rgba(55, 66, 127, 1.0000);
+  text-align: center;
+  width: 40%;
+}
+
+.navbar-welcome {
+  text-align: right;
+  width: 25%;
+}
