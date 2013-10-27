@@ -25,7 +25,7 @@
     @playlist = Playlist.find(params[:playlist_id])
       if @song.valid? 
         respond_to do |format|
-          @playlist.songs << @song
+          @playlist.songs << @song unless @playlist.name == "All"
           all = current_user.playlists.find_by_name("All") 
           all.songs << @song unless all.songs.include?(@song)
           @song.orders.last.update(order_num: @playlist.orders.order("order_num DESC").first.order_num + 1)
