@@ -13,6 +13,9 @@
   color: rgba(55, 66, 127, 1.0000);
 }
 
+.song-attributes h5 {
+  text-align: left;
+}
 .song-playlist-play{
   display: inline-block;
 }
