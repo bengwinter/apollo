@@ -147,34 +147,45 @@ padding: 15px;
 }
 
 
-.landing-page-form-field {
+.site-form-field {
   width: 100%;
   text-align: center;
-  margin: 10px;
 }
 
-.submit-button-landing-form {
+.site-form-field-gender {
+  width: 100%;
   text-align: center;
+}
+
+.site-submit-button {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .form-background-logged-in {
-  background-color: rgba(256, 256, 256, .50);
+  background-color: rgba(173, 173, 173, .50);
   text-align: left;
   width: 50%;
   margin-left: 25%;
+  margin-top: 50px;
   border-radius: 20px;
   color: rgba(55, 66, 127, 1.0000);
   padding: 20px;
 }
 
 .form-background {
-  background-color: rgba(256, 256, 256, .50);
+  background-color: rgba(55, 66, 127, .50);
   text-align: left;
   width: 50%;
   margin-left: 25%;
   border-radius: 20px;
   color: rgba(55, 66, 127, 1.0000);
   padding: 20px;
+}
+
+#form-title {
+  color: rgba(55, 66, 127, 1.0000);
+  text-align: center;
 }
 
 .form-background h2 {

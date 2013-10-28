@@ -1,52 +1,64 @@
-<div class="form-background-logged-in"
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="form-background-logged-in">
+<h2 id="form-title">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div class="site-form-field"><%= f.label :email %>
+  <div><%= f.email_field :email, :autofocus => true %></div>
+  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <div class="site-form-field"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+  <div><%= f.password_field :password, :autocomplete => "off" %></div>
+  </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="site-form-field"><%= f.label :password_confirmation %>
+  <div><%= f.password_field :password_confirmation %></div>
+  </div>
 
-  <div><%= f.label :current_password %><br />
-  <%= f.password_field :current_password %></div>
+  <div class="site-form-field"><%= f.label :current_password %>
+  <div><%= f.password_field :current_password %></div>
+  </div>
   
-  <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name %></div>
+  <div class="site-form-field"><%= f.label :first_name %>
+  <div><%= f.text_field :first_name %></div>
+  </div>
 
-  <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name %></div>
+  <div class="site-form-field"><%= f.label :last_name %>
+  <div><%= f.text_field :last_name %></div>
+  </div>
 
-  <div><%= f.label :age %><br />
-  <%= f.number_field :age %></div>
+  <div class="site-form-field"><%= f.label :age %>
+  <div><%= f.number_field :age %></div>
+  </div>
 
-  <div><%= f.label :gender %><br />
-  <%= f.radio_button :gender, 'male' %> 
-  <%= f.radio_button :gender, 'female' %></div>
+  <div class="site-form-field">
+  <%= f.label :gender %><br />
+  Male&nbsp;&nbsp;<%= f.radio_button :gender, 'Male' %> 
+  Female&nbsp;&nbsp;<%= f.radio_button :gender, 'Female' %></div>
 
-  <div><%= f.label :city %><br />
-  <%= f.text_field :city %></div>
+  <div class="site-form-field"><%= f.label :city %>
+  <div><%= f.text_field :city %></div>
+  </div>
 
-  <div><%= f.label :state %><br />
-  <%= f.text_field :state %></div>
+  <div class="site-form-field"><%= f.label :state %>
+  <div><%= f.text_field :state %></div>
+  </div>
 
-  <div><%= f.label :image %><br />
-  <%= f.text_field :image %></div>
+  <div class="site-form-field"><%= f.label :image %>
+  <div><%= f.text_field :image %></div>
+  </div>
 
-  <div><%= f.submit "Update" %></div>
+  <div class="site-submit-button"><%= f.submit "Update" %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
-
+<div class="site-form-field">
+<%= button_to "Cancel account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>
 <%= link_to "Back", :back %>
+</div>
+
+</div>

@@ -5,19 +5,19 @@
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="landing-page-form-field"><%= f.label :email %>
+    <div class="site-form-field"><%= f.label :email %>
       <div><%= f.email_field :email, :autofocus => true %></div>
     </div>
 
-    <div class="landing-page-form-field"><%= f.label :password %>
+    <div class="site-form-field"><%= f.label :password %>
     <div><%= f.password_field :password %></div>
     </div>
 
-    <div class="landing-page-form-field"><%= f.label :password_confirmation %>
+    <div class="site-form-field"><%= f.label :password_confirmation %>
     <div><%= f.password_field :password_confirmation %></div>
     </div>
 
-    <div class="submit-button-landing-form"><%= f.submit "Sign up" %></div>
+    <div class="site-submit-button"><%= f.submit "Sign Up" %></div>
     <% end %>
      <%= render "devise/shared/links" %>
   </div>
