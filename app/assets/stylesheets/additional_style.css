@@ -163,7 +163,7 @@ padding: 15px;
 }
 
 .form-background-logged-in {
-  background-color: rgba(173, 173, 173, .50);
+  background-color: rgba(55, 66, 127, .50);
   text-align: left;
   width: 50%;
   margin-left: 25%;
@@ -174,7 +174,7 @@ padding: 15px;
 }
 
 .form-background {
-  background-color: rgba(55, 66, 127, .50);
+  background-color: rgba(173, 173, 173, .50);
   text-align: left;
   width: 50%;
   margin-left: 25%;
