@@ -2,7 +2,7 @@
 .one-song {
   border-style: solid;
   border-width: 3px; 
-  color: rgba(173, 173, 173, 1.0000);
+  color: rgba(55, 66, 127, 1.0000);
   vertical-align: middle;
 }
 
@@ -11,10 +11,12 @@
   border-width: 3px;
   border-color: rgba(55, 66, 127, 1.0000);
   text-align: center;
-  margin-top: 40px;
-  margin-left: 115px;
+  margin-top: 70px;
+  margin-left: 125px;
   width: 75%;
   padding: 10px;
+  background-color: rgba(173, 173, 173, .70);
+  border-radius: 20px;
 }
 
 .song-play-button {
@@ -25,6 +27,7 @@
 
 .song-attributes h5 {
   text-align: left;
+  color: rgba(55, 66, 127, 1.0000);
 }
 
 .song-attributes {
@@ -83,6 +86,11 @@
   padding-bottom: 150px;
   width: 100%;
   text-align: center;
+  background-image: url(http://s3.amazonaws.com/ApolloApp/Landing+Page/landing-page-background.png);
+  background-size: cover;
+  margin-top: -20px;
+  padding-top: 25px;
+  background-attachment: scroll;
 }
 
 /** Navigation Bar **/
@@ -136,25 +144,65 @@ line-height: 5px
 }
 
 input {
-font-family: Roboto;
-font-size: 20px;
-text-align: center;
-font-weight: 100;
-margin: 0px 1px;
-color: #666;
-border: 1px solid #999;
-padding: 15px;
+  font-family: Roboto;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 100;
+  margin: 0px 1px;
+  color: #666;
+  border: 1px solid #999;
+  padding: 15px;
 }
 
+.site-playlist-list {
+  text-align: center;
+}
 
+.site-playlist-list li {
+  font-size: 30px;
+}
+
+.homepage-button {
+  font-size: 18px;
+  background-color: rgba(55, 66, 127, 1.0000);
+  font-weight: 500;
+  color: #FFF;
+  border: 1px;
+  border-radius: 10px;
+  text-transform: lowercase;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.home-form-background-logged-in {
+  background-color: rgba(173, 173, 173, .50);
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px;
+  border-radius: 20px;
+  color: rgba(55, 66, 127, 1.0000);
+  padding: 20px;
+}
 .site-form-field {
   width: 100%;
   text-align: center;
 }
 
+.genre-form-field {
+  width: 100%;
+  text-align: center;
+}
+
+.genre-title-field {
+  font-size: 20px;
+}
+
 .site-form-field-gender {
   width: 100%;
   text-align: center;
+  margin-top: 25px;
 }
 
 .site-submit-button {
@@ -163,7 +211,7 @@ padding: 15px;
 }
 
 .form-background-logged-in {
-  background-color: rgba(55, 66, 127, .50);
+  background-color: rgba(173, 173, 173, .50);
   text-align: left;
   width: 50%;
   margin-left: 25%;
@@ -183,7 +231,12 @@ padding: 15px;
   padding: 20px;
 }
 
-#form-title {
+.form-message{
+  color: rgba(208, 69, 38, 1.0000);
+  text-align: center;
+}
+
+.form-title {
   color: rgba(55, 66, 127, 1.0000);
   text-align: center;
 }
@@ -194,12 +247,12 @@ padding: 15px;
 }
 
 input[type="submit"] {
-width: auto;
-font-size: 18px;
-background-color: rgba(55, 66, 127, 1.0000);
-font-weight: 500;
-color: #FFF;
-border: 1px;
-border-radius: 10px;
-text-transform: lowercase;
+  width: auto;
+  font-size: 18px;
+  background-color: rgba(55, 66, 127, 1.0000);
+  font-weight: 500;
+  color: #FFF;
+  border: 1px;
+  border-radius: 10px;
+  text-transform: lowercase;
 }
