@@ -1,24 +1,70 @@
 /** Song Icon Styling **/
+.one-song {
+  border-style: solid;
+  border-width: 3px; 
+  color: rgba(173, 173, 173, 1.0000);
+  vertical-align: middle;
+}
 
 .song-playlist{
   border-style: solid;
   border-width: 3px;
   border-color: rgba(55, 66, 127, 1.0000);
-  
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 115px;
+  width: 75%;
+  padding: 10px;
 }
 
-.song-title h4 {
-  color: rgba(55, 66, 127, 1.0000);
-}
-
-.song-title h5 {
-  color: rgba(55, 66, 127, 1.0000);
+.song-play-button {
+  width: 25%;
+  display: inline-block;
+  margin-left: -25px;
 }
 
 .song-attributes h5 {
   text-align: left;
 }
 
+.song-attributes {
+  width: 15%;
+  display: inline-block;
+}
+
+.song-text {
+  width: 40%;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.song-text h4 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.song-text h5 {
+  color: rgba(55, 66, 127, 1.0000);
+}
+
+.song-edit-delete {
+  width: 20%;
+  display: inline-block;
+}
+
+/** Playlist Page **/
+.playlist-links {
+  display: inline-block;
+}
+
+#playlist-name {
+  display: inline-block;
+  margin-left: -40px;
+  color: rgba(55, 66, 127, 1.0000);
+}
+.playlist-links-element {
+  display: inline-block;
+  margin-left: 25px;
+}
 
 /** Landing Page **/
 
@@ -35,6 +81,8 @@
 
 .container {
   padding-bottom: 150px;
+  width: 100%;
+  text-align: center;
 }
 
 /** Navigation Bar **/
@@ -59,9 +107,21 @@
   width: 40%;
 }
 
-.navbar-welcome {
+.nav-bar-welcome-text {
+  color: rgba(55, 66, 127, 1.0000);
+}
+.nav-bar-welcome {
   text-align: right;
   width: 25%;
+  margin-top: 10px;
+}
+
+.nav-bar-settings {
+  margin-left: 20px;
+}
+
+.nav-bar-log-out {
+  margin-left: 20px;
 }
 
 
@@ -97,6 +157,15 @@ padding: 15px;
   text-align: center;
 }
 
+.form-background-logged-in {
+  background-color: rgba(256, 256, 256, .50);
+  text-align: left;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 20px;
+  color: rgba(55, 66, 127, 1.0000);
+  padding: 20px;
+}
 
 .form-background {
   background-color: rgba(256, 256, 256, .50);

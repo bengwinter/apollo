@@ -7,18 +7,20 @@
   <div class="nav-bar-player six columns">
     <h4>Placeholder for music player</h4>
   </div>
-  <div class="navbar-welcome three columns">
+  <div class="nav-bar-welcome three columns">
   <% if user_signed_in? %>
-  <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
-    <h3>Welcome <% if current_user.first_name != nil %>
-      <%= current_user.first_name %>
+    <span class="nav-bar-welcome-text">Welcome<% if current_user.first_name != nil %>
+      <%= ", " + current_user.first_name %>
       <% else %>
       <%= "" %>
       <% end %>
-    </h3>
-    <div class="navbar-settings">
-      <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_280_settings.png", alt: "user settings"), edit_user_registration_path %>
-    </div>
+    </span>
+    <span class="nav-bar-settings">
+      <%= link_to image_tag("http://s3.amazonaws.com/ApolloApp/Landing+Page/glyphicons_280_settings.png", alt: "user settings", width: 15), edit_user_registration_path %>
+    </span>
+    <span class="nav-bar-log-out">
+    <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
+    </span>
     <% else %>
     <div class="register">
       <h5><%= link_to "Sign Up", new_user_registration_path %>
